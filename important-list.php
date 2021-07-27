@@ -49,7 +49,6 @@ if($lesupdate){
 }// no sql error 
 
 
-
 // secure pagination
 // ===================== query ===============
 $limit = 10;
