@@ -29,6 +29,27 @@ echo $row['full_name']."<br>";
 }
 
 
+// secure update data base
+// ===================== query ===============
+$users = "UPDATE users SET full_name=?,email=?,mobile=?,address=?,about=? WHERE id=?";
+
+$stmt = mysqli_stmt_init($heart);
+
+if(!mysqli_stmt_prepare($stmt, $users )){
+echo "Error: " . $users  . "<br>" . $heart->error;
+}
+else {
+
+mysqli_stmt_bind_param($stmt, "ssssss", $full_name,$email,$mobile,$address,$user_about,$user_id);
+mysqli_stmt_execute($stmt);
+$lesupdate = mysqli_stmt_execute($stmt);
+if($lesupdate){
+    echo '<span class="alert alert-success block">Profile Update Success</span>';
+}    
+}// no sql error 
+
+
+
 // secure pagination
 // ===================== query ===============
 $limit = 10;
