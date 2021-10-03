@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<button onclick="myFunction()">Check</button>
+<script>
+function myFunction() {
+
+  swal({
+    title: 'Login Success',
+    text: 'Redirecting...',
+    icon: 'success',
+    timer: 2000,
+    buttons: false,
+})
+.then(() => {
+    dispatch(redirect('/'));
+});
+
+}// functions
+</script>
+
